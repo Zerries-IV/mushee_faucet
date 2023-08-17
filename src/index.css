@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    font-family: 'Golos Text', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+code {
+    font-family: 'Golos Text', sans-serif;
+}
+
+#address {
+    width: 100%;
+    background-color: #242424;
+    border-radius: 10px;
+    border: 1px solid grey;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+#address::placeholder{
+    color: grey;
+}
+  
