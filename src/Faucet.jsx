@@ -140,6 +140,8 @@ const FaucetContainer = () => {
         const fetchData = async () => {
             try {
                 if(account !== ''){
+                    await getCooldownForAddress(FAUCET_ADDRESS);
+                } else {
                     const ACC = account.toString()
                     await getCooldownForAddress(ACC);
                 }
@@ -227,7 +229,7 @@ const FaucetContainer = () => {
 
     async function requestToken(values){
         try {
-            const reciept = await contract.methods.requestTokens().send({ from: values.address });
+            await contract.methods.requestTokens().send({ from: values.address });
             const addressSentTo = (values.address).toString()
             await getCooldownForAddress(addressSentTo)
             Swal.fire({
