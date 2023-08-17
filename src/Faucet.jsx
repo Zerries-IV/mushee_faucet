@@ -137,19 +137,7 @@ const FaucetContainer = () => {
     },[])
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                if(account !== ''){
-                    await getCooldownForAddress(FAUCET_ADDRESS);
-                } else {
-                    const ACC = account.toString()
-                    await getCooldownForAddress(ACC);
-                }
-            } catch(error){
-                console.log(error)
-            }
-        }
-        fetchData()
+        connectWallet()            
     },[account])
 
     async function connectWallet(){
@@ -176,6 +164,7 @@ const FaucetContainer = () => {
         } else if (window.BinanceChain) {
             try {
                 const provider = new Web3(window.BinanceChain)
+                const mobileInstance = new provider.eth.Contract(ABI.abi, FAUCET_ADDRESS);
                 await window.BinanceChain.request({
                     method: 'wallet_addEthereumChain',
                     params: [TESTNET_INFORMATION]
@@ -185,6 +174,7 @@ const FaucetContainer = () => {
                 })
                 const accounts = await provider.eth.getAccounts()
                 setAccount(accounts[0])
+                setContract(mobileInstance)
                 Swal.fire({
                     title: 'Success',
                     text: accounts,
