@@ -141,27 +141,7 @@ const FaucetContainer = () => {
     },[account])
 
     async function connectWallet(){
-        if(window.ethereum){
-            try {
-                await window.ethereum.request({
-                    method: 'wallet_addEthereumChain',
-                    params: [TESTNET_INFORMATION]
-                })
-                const accounts = await window.ethereum.enable();
-                setAccount(accounts[0])
-                Swal.fire({
-                    title: 'Success',
-                    text: accounts,
-                    icon: 'success'
-                })
-            } catch (error) {
-                Swal.fire({
-                    title: 'Error',
-                    text: error.message,
-                    icon: 'error'
-                })
-            }
-        } else if (window.BinanceChain) {
+        if(window.BinanceChain){
             try {
                 const provider = new Web3(window.BinanceChain)
                 const mobileInstance = new provider.eth.Contract(ABI.abi, FAUCET_ADDRESS);
@@ -175,6 +155,26 @@ const FaucetContainer = () => {
                 const accounts = await provider.eth.getAccounts()
                 setAccount(accounts[0])
                 setContract(mobileInstance)
+                Swal.fire({
+                    title: 'Success',
+                    text: accounts,
+                    icon: 'success'
+                })
+            } catch (error) {
+                Swal.fire({
+                    title: 'Error',
+                    text: error.message,
+                    icon: 'error'
+                })
+            }
+        } else if (window.ethereum) {
+            try {
+                await window.ethereum.request({
+                    method: 'wallet_addEthereumChain',
+                    params: [TESTNET_INFORMATION]
+                })
+                const accounts = await window.ethereum.enable();
+                setAccount(accounts[0])
                 Swal.fire({
                     title: 'Success',
                     text: accounts,
