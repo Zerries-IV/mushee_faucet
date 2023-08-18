@@ -128,8 +128,9 @@ const FaucetContainer = () => {
             } catch (error) {
                 Swal.fire({
                     title: "Error",
-                    text: error.message,
-                    icon: "error"
+                    text: 'Error while establishing connection, Disable other extensions',
+                    icon: "error",
+                    button: "Try Again"
                 })
             }
         }
@@ -163,8 +164,9 @@ const FaucetContainer = () => {
             } catch (error) {
                 Swal.fire({
                     title: 'Error',
-                    text: error.message,
-                    icon: 'error'
+                    text: 'Error while establishing connection, Disable other extensions',
+                    icon: 'error',
+                    button: 'Try Again'
                 })
             }
         } else if (window.ethereum) {
@@ -183,8 +185,9 @@ const FaucetContainer = () => {
             } catch (error) {
                 Swal.fire({
                     title: 'Error',
-                    text: error.message,
-                    icon: 'error'
+                    text: 'Error while establishing connection, Disable other extensions',
+                    icon: 'error',
+                    button: 'Try Again'
                 })
             }
         } else {
