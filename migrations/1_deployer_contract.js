@@ -1,5 +1,6 @@
-const TestFaucet = artifacts.require("TestFaucet")
+const Faucet = artifacts.require("Faucet")
+const ADDRESS = import.meta.env.FAUCET_ADDRESS
 
 module.exports = async function(deployer){
-    await deployer.deploy(TestFaucet, '0x3255106D0f9cDEF1204054EC51884E924C28dF4b')
+    await deployer.deploy(Faucet, ADDRESS)
 }

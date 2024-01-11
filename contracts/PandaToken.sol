@@ -1,13 +1,13 @@
 //SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract TestMusheeToken is IERC20, Ownable {
-    string private _name = "TestMushee";
-    string private _symbol = "tMSH";
+contract PandaToken is IERC20, Ownable {
+    string private _name = "Panda";
+    string private _symbol = "tPNA";
     uint8 private _decimals = 18;
     uint256 private _totalSupply = 1100000 * 10 ** uint256(_decimals);
     address private _owner;
