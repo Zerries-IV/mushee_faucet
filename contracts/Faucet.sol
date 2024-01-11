@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-import "./PandaToken.sol";
+import "./MusheeToken.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Faucet is Ownable {
-    PandaToken public existingTokenContract;
+    MusheeToken public existingTokenContract;
     uint256 public requestCooldown = 15 minutes;
     uint256 public faucetBalance;
 
@@ -13,7 +13,7 @@ contract Faucet is Ownable {
     mapping(address => uint256) private _balances;
 
     constructor(address _existingTokenAddress){
-        existingTokenContract = PandaToken(_existingTokenAddress);
+        existingTokenContract = MusheeToken(_existingTokenAddress);
         faucetBalance = existingTokenContract.balanceOf(msg.sender);
     }
 
