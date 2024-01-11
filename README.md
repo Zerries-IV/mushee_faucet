@@ -74,14 +74,16 @@ Clone the repository containing the Test Token Faucet program to your local mach
 
 Create a .env file in the root of the project and set the following environment variables:
 
-VITE_CRYPTO_NAME=YourCryptoName
-VITE_CRYPTO_SYMBOL=YourSymbol
-VITE_CHAIN_ID=YourChainId
-VITE_CHAIN_NAME=YourChainName
-VITE_DECIMALS=YourDecimals
-VITE_RPC_URLS=YourRpcUrls
-VITE_BLOCK_EXPLORER_URLS=YourBlockExplorerUrls
-VITE_FAUCET_ADDRESS=YourFaucetAddress
+```bash
+   VITE_CRYPTO_NAME=YourCryptoName
+   VITE_CRYPTO_SYMBOL=YourSymbol
+   VITE_CHAIN_ID=YourChainId
+   VITE_CHAIN_NAME=YourChainName
+   VITE_DECIMALS=YourDecimals
+   VITE_RPC_URLS=YourRpcUrls
+   VITE_BLOCK_EXPLORER_URLS=YourBlockExplorerUrls
+   VITE_FAUCET_ADDRESS=YourFaucetAddress
+```
 
 ### 4. Customize
 
