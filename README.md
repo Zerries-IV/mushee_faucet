@@ -1,4 +1,4 @@
-# Faucet Container for Test Tokens
+# Faucet Tokens
 
 This React component, `FaucetContainer`, is a part of a project related to handling and distributing test tokens on a testnet blockchain, presumably using MetaMask or a similar wallet.
 
