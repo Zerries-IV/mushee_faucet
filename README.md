@@ -2,7 +2,7 @@
 
 This React component, `FaucetContainer`, is a part of a project related to handling and distributing test tokens on a testnet blockchain, presumably using MetaMask or a similar wallet.
 
-[!Preview](./src/assets/preview.png)
+![Preview](./src/assets/preview.png)
 
 ## Environment Variables
 
